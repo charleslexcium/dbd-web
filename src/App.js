@@ -9,8 +9,6 @@ import PrivacyPolicy from './components/privacyPolicy';
 import TermsOfService from './components/termsOfService';
 import NotFound from './components/notFound';
 import Home from './components/home';
-import Register from './components/registration/register';
-import Complete from './components/registration/complete';
 import PrivateRoute from './helpers/privateRoute';
 import logo from './images/logo64.png';
 
@@ -37,8 +35,6 @@ const router = createBrowserRouter([
       { path: '/', element: <Home /> },
       { path: '/privacy-policy', element: <PrivacyPolicy /> },
       { path: '/terms-of-service', element: <TermsOfService /> },
-      { path: '/register', element: <Register /> },
-      { path: '/complete/:device', element: <Complete /> },
       { path: '/not-found', element: <NotFound /> },
       { path: '*', element: <NotFound /> },
     ],

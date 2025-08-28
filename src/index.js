@@ -13,8 +13,8 @@ const eventLogger = (event, error) => {
   console.log('onKeycloakEvent', event, error)
 }
 
-const tokenLogger = (tokens) => {
-  console.log('onKeycloakTokens', tokens)
+const tokenLogger = (token) => {
+  console.log('onKeycloakTokens', token.token)
 }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -24,7 +24,7 @@ root.render(
       authClient={keycloak}
       initOptions={{
         onLoad: 'login-required',
-        redirectUri: `${process.env.REACT_APP_URL}/register`,
+        redirectUri: `${process.env.REACT_APP_URL}`,
       }}
     onEvent={eventLogger}
     onTokens={tokenLogger}

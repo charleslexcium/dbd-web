@@ -12,7 +12,7 @@ function Home() {
           type="button"
           className="text-blue-800"
           onClick={() => keycloak.login({
-            redirectUri: `${process.env.REACT_APP_URL}/register`,
+            redirectUri: `${process.env.REACT_APP_URL}`,
           })}
         >
           Login

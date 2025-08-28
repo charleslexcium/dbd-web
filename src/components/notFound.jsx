@@ -10,7 +10,7 @@ function NotFound() {
       </p>
       <hr />
       <p className="mb-0">
-        To register your device visit: <a href="/register">the registration website</a>.
+        Go: <a href="/">home</a>.
       </p>
     </Alert>
   );
