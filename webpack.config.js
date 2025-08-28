@@ -14,9 +14,9 @@ const authUrl = (process.env.NODE_ENV !== 'prod') ? `https://auth.${process.env.
 const appEnv = (process.env.NODE_ENV === 'local') ? new webpack.DefinePlugin({
   "process.env.REACT_APP_URL": '"http://localhost:3000"',
   "process.env.REACT_APP_BFF_URL": '"http://localhost:8091/web/v1"',
-  "process.env.REACT_APP_AUTH_URL": '"https://auth.dev.neithing.com"',
-  "process.env.REACT_APP_AUTH_REALM": '"test"',
-  "process.env.REACT_APP_AUTH_CLIENT_ID": '"test-client"',
+  "process.env.REACT_APP_AUTH_URL": '"http://localhost:80"',
+  "process.env.REACT_APP_AUTH_REALM": '"dbd"',
+  "process.env.REACT_APP_AUTH_CLIENT_ID": '"dbd"',
 }) : new webpack.DefinePlugin({
   "process.env.REACT_APP_URL": `"${appUrl}"`,
   "process.env.REACT_APP_BFF_URL": `"${serviceUrl}/web/v1"`,
@@ -132,10 +132,10 @@ module.exports = {
       filename: path.join(__dirname, 'dist', 'index.html'),
       favicon: path.join(__dirname, 'public', 'favicon.ico'),
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { from: 'static' },
-      ],
-    }),
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     { from: 'static' },
+    //   ],
+    // }),
   ],
 }

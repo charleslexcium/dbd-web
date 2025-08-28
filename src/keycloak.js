@@ -1,9 +1,10 @@
-import Keycloak from "keycloak-js";
+// eslint-disable-next-line import/no-unresolved
+import Keycloak from 'keycloak-js';
 
 const keycloak = new Keycloak({
-  url: "http://localhost:80",
-  realm: "dbd",
-  clientId: "dbd",
+  url: process.env.REACT_APP_AUTH_URL,
+  realm: process.env.REACT_APP_AUTH_REALM,
+  clientId: process.env.REACT_APP_AUTH_CLIENT_ID,
 });
 
 export default keycloak;

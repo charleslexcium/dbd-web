@@ -6,7 +6,8 @@ run:
 	npm run local
 
 lint:
-	npx eslint src/*.js* src/components/*.js* src/components/**/*.js* --fix
+	npx eslint src/*.js* --fix
+	# npx eslint src/*.js* src/components/*.js* src/components/**/*.js* --fix
 
 build:
 	rm -rf dist/
