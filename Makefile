@@ -6,8 +6,7 @@ run:
 	npm run local
 
 lint:
-	npx eslint src/*.js* --fix
-	# npx eslint src/*.js* src/components/*.js* src/components/**/*.js* --fix
+	npx eslint src/*.js* src/components/*.js* src/components/**/*.js* --fix
 
 build:
 	rm -rf dist/
@@ -16,8 +15,8 @@ build:
 	npm run build-env
 
 deploy:
-	aws s3 sync dist/ s3://register.${NODE_ENV}.neithing.com
-	DISTRIBUTION_ID="$(shell aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items!=null] | [?contains(Aliases.Items, 'register."${NODE_ENV}".neithing.com')].Id" --output text)" make invalidate
+	aws s3 sync dist/ s3://register.${NODE_ENV}.dbd.com
+	DISTRIBUTION_ID="$(shell aws cloudfront list-distributions --query "DistributionList.Items[?Aliases.Items!=null] | [?contains(Aliases.Items, 'register."${NODE_ENV}".dbd.com')].Id" --output text)" make invalidate
 	
 invalidate:
 	INVALIDATION_ID="$(shell aws cloudfront create-invalidation --distribution-id ${DISTRIBUTION_ID} --paths "/*" --query "Invalidation.Id" --output text)" make wait-deployment

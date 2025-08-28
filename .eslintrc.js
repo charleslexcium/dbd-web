@@ -2,7 +2,6 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
-    jest: true,
   },
   extends: [
     'plugin:react/recommended',
@@ -24,13 +23,6 @@ module.exports = {
   plugins: [
     'react',
   ],
-  settings: {
-    'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx']
-      }
-    }
-  },
   rules: {
     'import/extensions': 0,
     'react/prop-types': 0,

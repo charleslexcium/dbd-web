@@ -1,0 +1,39 @@
+// Override default variables before the import
+// $body-bg: #000;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
+
+.margin-top-12 {
+  margin-top: 1.2rem;
+}
+
+.margin-top-20 {
+  margin-top: 2rem;
+}
+
+.uppercase-text {
+  text-transform: uppercase;
+}
+
+.logo48 {
+  height: 48px;
+  width: 48px;
+}
+
+.abase {
+  align-items: center !important;
+}
+
+.hh1 {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0 !important;
+}
+
+.area-wordy {
+  .scrollable {
+    height: 732px;
+    overflow-y: auto;
+  }
+}

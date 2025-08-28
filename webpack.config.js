@@ -7,9 +7,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
-const appUrl = (process.env.NODE_ENV !== 'prod') ? `https://register.${process.env.NODE_ENV}.neithing.com` : 'https://register.neithing.com';
-const serviceUrl = (process.env.NODE_ENV !== 'prod') ? `https://bff.${process.env.NODE_ENV}.neithing.com` : 'https://bff.neithing.com';
-const authUrl = (process.env.NODE_ENV !== 'prod') ? `https://auth.${process.env.NODE_ENV}.neithing.com` : 'https://auth.neithing.com';
+const appUrl = (process.env.NODE_ENV !== 'prod') ? `https://register.${process.env.NODE_ENV}.dbd.com` : 'https://register.dbd.com';
+const serviceUrl = (process.env.NODE_ENV !== 'prod') ? `https://bff.${process.env.NODE_ENV}.dbd.com` : 'https://bff.dbd.com';
+const authUrl = (process.env.NODE_ENV !== 'prod') ? `https://auth.${process.env.NODE_ENV}.dbd.com` : 'https://auth.dbd.com';
 
 const appEnv = (process.env.NODE_ENV === 'local') ? new webpack.DefinePlugin({
   "process.env.REACT_APP_URL": '"http://localhost:3000"',
@@ -132,10 +132,10 @@ module.exports = {
       filename: path.join(__dirname, 'dist', 'index.html'),
       favicon: path.join(__dirname, 'public', 'favicon.ico'),
     }),
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     { from: 'static' },
-    //   ],
-    // }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'static' },
+      ],
+    }),
   ],
 }
